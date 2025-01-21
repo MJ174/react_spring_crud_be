@@ -50,7 +50,8 @@ public class SecurityConfig {
                         .requestMatchers("/user/**").hasRole("USER")
                         .requestMatchers("/board/**").hasRole("USER")
                         .requestMatchers("/board/{boardId}/comment/**").hasRole("USER")
-                        .requestMatchers("/board/{boardId}/file/**").hasRole("USER"))
+                        .requestMatchers("/board/{boardId}/file/**").hasRole("USER")
+                        .requestMatchers("/admin/**").hasAuthority("ADMIN"))
 
 
                 .sessionManagement(session -> session.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
